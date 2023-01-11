@@ -1,14 +1,13 @@
-string = 'hello world ! this is qwerty"
-new_string string.replace ("w", "u" )
-print(string)
-print(new_string)
-freq={}
-for i in string:
-if i in freq:
-freq[i]= 1
-else:
-freqt[i]- 1
-print("Count of all characters in", string, "is:", "\n "+ str(freq))
-str2-string.replace ("1", " ",1)
-print(str2)
-str3-string.replace("1",' ')
+# Remove the first occurrence of a character from a string.
+my_str = 'apple'
+
+
+def remove_first_occurrence(string, char):
+    idx = string.index(char)
+
+    return string[:idx] + string[idx+len(char):]
+
+
+print(remove_first_occurrence('apple', 'p'))
+
+print(remove_first_occurrence('abc one abc two', 'abc '))

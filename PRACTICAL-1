@@ -1,13 +1,12 @@
-import numpy as np
-vector np.array([1, 2, 3])
-print (vector)
-vector_transpose = vector.T
-print (vector_transpose)
-matrix np.array([[1, 21, [3, 4]. [5, 6]1)
-print (matrix)
-matrix_transpose matrix.T
-print (matrix_transpose)
-matrix np.array([ [1, 2-1j1, 13, 4]])
-print (matrix)
-matrix_conjugate_trans pose np.conj (matrix).T
-print (matrix_conjugate_transpose)
+import cmath  
+a = float(input('Enter a: '))  
+b = float(input('Enter b: '))  
+c = float(input('Enter c: '))  
+  
+# calculate the discriminant  
+d = (b**2) - (4*a*c)  
+  
+# find two solutions  
+sol1 = (-b-cmath.sqrt(d))/(2*a)  
+sol2 = (-b+cmath.sqrt(d))/(2*a)  
+print(f'The solution are {sol1} and {sol2}')  

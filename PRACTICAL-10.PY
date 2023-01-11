@@ -1,17 +1,14 @@
-str="an apple a day keeps doc away"
-str2="a banana is good for health"
-print(str)
-print(str2)
-str=list(str)
-str2=list(str2)
-n=5
-str[:n],str2[:n]=str2[:n],str[:n]
+# Remove all occurrences of a character from a string.
 
-def LtoS(s):
-    str1 = ""
+test_str = "GeeksforGeeks"
 
-    for ele in s:
-        str1 += ele
-    return str1
-print(LtoS(str))
-print(LtoS(str2))
+rem_char = "e"
+
+print("The original string is : " + str(test_str))
+
+new_str = ""
+for i in test_str:
+	if(i != rem_char):
+		new_str += i
+res = new_str
+print("The string after character deletion : " + str(res))

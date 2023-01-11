@@ -1,19 +1,53 @@
-import math
-class Point:
-    COUNT = 0
-    def _init_(self, x, y):
-        self.X = x
-        self.Y = y
-    def move(self, dx, dy):
-        self.X = self.X + dx
-        self.Y = self.Y + dy
-    def _str_(self):
-        return "Point(%s,%s)"%(self.X, self.Y)
-    def getX(self):
-        return self.X
-    def getY(self):
-        return self.Y
-    def distance(self, other):
-        dx = self.X - other.X
-        dy = self.Y - other.Y
-        return math.sqrt(dx*2 + dy*2)
+'''WAP to read a file and
+m. Print the total number of characters, words and lines in the file.
+n. Calculate the frequency of each character in the file. Use a variable of dictionary
+type to maintain the count.
+o. Print the words in reverse order.
+p. Copy even lines of the file to a file named ‘File1’ and odd lines to another
+file named ‘File2’.'''
+
+
+file = open('a.txt','r')
+
+file1 = open('file1.txt','w')
+file2 = open('file2.txt','w')
+
+lineCount = 0
+wordCount = 0
+charCount = 0
+
+freq = {}
+
+allWords = []
+
+for line in file :
+    lineCount += 1
+    charCount += len(line)
+
+    words = line.split()
+    allWords.extend(words)
+    wordCount += len(words)
+
+    for ch in line:
+        if ch in freq:
+            freq[ch] += 1
+        else:
+            freq[ch] = 1
+
+    if lineCount%2 == 0:
+        file1.write(line)
+    else:
+        file2.write(line)
+
+print("Total number of characters : {}".format(charCount))
+print("Total number of words      : {}".format(wordCount))
+print("Total number of lines      : {}".format(lineCount))
+
+
+print("Frequency of each character : ")
+for ch in freq.keys():
+    print("{} : {}".format(ch, freq[ch]))
+
+allWords.reverse()
+print("Words in reverse order : ")
+print(allWords)

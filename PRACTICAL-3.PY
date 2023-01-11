@@ -1,15 +1,8 @@
-n = 5
-
-for i in range(0, n):
-
-        for j in range(0, i + 1):
-
-            print("* ", end="")
-        print()
-rows = 5
-
-
-for i in range(rows + 1, 0, -1):
-    for j in range(0, i - 1):
-        print("*", end=' ')
-    print(" ")
+n=int(input("enter a number : "))
+for num in range(2,n + 1):
+   if num > 1:
+       for i in range(2, num):
+           if (num % i) == 0:
+               break
+       else:
+           print(num)

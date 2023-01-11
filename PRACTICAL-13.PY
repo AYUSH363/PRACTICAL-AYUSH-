@@ -1,42 +1,20 @@
-file = open('a.txt','r')
-file1 = open('file1.txt','w')
-file2 = open('file2.txt','w')
-lineCount = 0
-wordCount = 0
-charCount = 0
-
-freq = {}
-
-allWords = []
-
-for line in file :
-    lineCount += 1
-    charCount += len(line)
-
-    words = line.split()
-    allWords.extend(words)
-    wordCount += len(words)
-
-    for ch in line:
-        if ch in freq:
-            freq[ch] += 1
-        else:
-            freq[ch] = 1
-
-    if lineCount%2 == 0:
-        file1.write(line)
-    else:
-        file2.write(line)
-
-print("Total number of characters : {}".format(charCount))
-print("Total number of words      : {}".format(wordCount))
-print("Total number of lines      : {}".format(lineCount))
-
-
-print("Frequency of each character : ")
-for ch in freq.keys():
-    print("{} : {}".format(ch, freq[ch]))
-
-allWords.reverse()
-print("Words in reverse order : ")
-print(allWords)
+'''wap to create a list containing cubes of only even integers
+appearing in the input . (a).(using for loops) (b)list comprehension'''
+# (a) using loops
+test = []
+n = int(input('enter the length of list \n'))
+for j in range(0, n):
+    val = input('enter the values: ')
+    test.append(val)
+cubes = []
+for i in test:
+    if str(i).isdigit():
+        if int(i) % 2 == 0:
+            i = int(int(i) ** 3)
+            cubes.append(i)
+print('The cubed values of all the even digits in the given string using for loop are: ')
+print(cubes)
+# b)
+list_comp = [int(cube)**3 for cube in test if cube.isdigit() and int(cube) % 2 == 0]
+print('The cubed values of all the even digits in the given string using list comprehension are: ')
+print(list_comp)

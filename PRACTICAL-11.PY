@@ -1,9 +1,12 @@
-str1 = input('Enter the string 1 :')
-str2 = input('Enter the string 2 :')
+# WAP to swap the first n characters of two strings.
 
+str1 = input("Please Enter First String : ")
+str2 = input("Please Enter Second String : ")
 
-res = [i for i in range(len(str1)) if str1.startswith(str2, i)]
-ind=str(res)
-l=[ind,len(str2)]
+n = int(input('How many character you want to swap: '))
 
-print("The start/ending indices of the substrings are : " ,l)
+x = str2[:n] + str1[n:]
+y = str1[:n] + str2[n:]
+
+print("Your first has become :- ", x)
+print("Your second has become :- ", y)
